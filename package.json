@@ -1,0 +1,70 @@
+{
+  "name": "copy-code-from-folders-formatted",
+  "displayName": "copy-code-from-folders-formatted",
+  "description": "copy entire folders with relative paths",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "publisher": "alexander-deleo",
+	"author": {
+		"name": "Alexander-Deleeck"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Alexander-Deleeck/copy-code-from-folders-formatted"
+	},
+  "categories": [
+		"Other"
+	],
+	"keywords": [
+		"development",
+		"code",
+		"copy",
+		"clipboard",
+		"text",
+		"utilities",
+		"explorer",
+		"gpt"
+	],
+	"activationEvents": [
+		"onCommand:copy-code-from-folders-formatted.copyFilesContent"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "copy-code-from-folders-formatted.copyFilesContent"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "copy-code-from-folders-formatted.copyFilesContent",
+				"title": "Copy Content of Selected Files",
+				"category": "Explorer"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "copy-code-from-folders-formatted.copyFilesContent",
+				"key": "ctrl+alt+c",
+				"when": "explorerViewletVisible || editorTextFocus"
+			}
+		]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.16.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
