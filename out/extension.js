@@ -120,7 +120,7 @@ async function processFileOrDirectory(uri) {
     }
 }
 function activate(context) {
-    let disposable = vscode.commands.registerCommand("copy-text-selected-files.copyFilesContent", async (uri, uris) => {
+    let disposable = vscode.commands.registerCommand("copy-code-from-folders-formatted.copyFilesContent", async (uri, uris) => {
         try {
             const filesToProcess = uris || (uri ? [uri] : await getSelectedFiles());
             if (!filesToProcess?.length) {
